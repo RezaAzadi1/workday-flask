@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>محاسبه تاریخ کاری</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            direction: rtl;
+            text-align: center;
+            background: linear-gradient(135deg, #5a8dee, #2e3dd4);
+            color: #fff;
+            padding-top: 70px;
+        }
+        form {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        input {
+            width: 180px;
+            text-align: center;
+        }
+        button {
+            background-color: #ffffffaa;
+            color: #222;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #fff;
+        }
+        .result {
+            margin-top: 30px;
+            font-size: 20px;
+            background: rgba(255,255,255,0.15);
+            padding: 15px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>محاسبه‌گر تاریخ نهایی بر اساس روزهای کاری</h1>
+    <form method="POST">
+        <label>تاریخ شروع (جلالی):</label>
+        <input type="text" name="start_date" placeholder="مثلاً 14031215" required>
+        <br>
+        <label>تعداد روزهای کاری:</label>
+        <input type="number" name="days_to_add" min="1" required>
+        <br>
+        <button type="submit">محاسبه</button>
+    </form>
+
+    {% if result %}
+    <div class="result">{{ result }}</div>
+    {% endif %}
+</body>
+</html>
